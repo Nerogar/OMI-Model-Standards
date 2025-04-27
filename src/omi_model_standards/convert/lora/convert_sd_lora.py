@@ -55,7 +55,7 @@ def __map_unet_up_block(key_prefix: LoraConversionKeySet) -> list[LoraConversion
     keys += __map_unet_resnet_block(LoraConversionKeySet("0.0", "0.resnets.0", parent=key_prefix))
     keys += __map_unet_resnet_block(LoraConversionKeySet("1.0", "0.resnets.1", parent=key_prefix))
     keys += __map_unet_resnet_block(LoraConversionKeySet("2.0", "0.resnets.2", parent=key_prefix))
-    keys += [LoraConversionKeySet("2.2.conv", "0.upsamplers.0.conv", parent=key_prefix)]
+    keys += [LoraConversionKeySet("2.1.conv", "0.upsamplers.0.conv", parent=key_prefix)]
 
     keys += __map_unet_resnet_block(LoraConversionKeySet("3.0", "1.resnets.0", parent=key_prefix))
     keys += [LoraConversionKeySet("3.1", "1.attentions.0", parent=key_prefix)]
